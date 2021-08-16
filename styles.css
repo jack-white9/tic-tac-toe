@@ -17,8 +17,8 @@ header {
 }
 
 container {
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     margin: 0 auto;
     background-color: #34495e;
     color: #fff;
@@ -43,6 +43,29 @@ container {
     cursor: pointer;
     background-color: #4a5f75;
     font-size: 5em;
+}
+
+.buttonContainer {
+    padding-top: 2em;
+    flex: 1 0 100%;
+    text-align: center;
+}
+
+.restartButton {
+    padding: 0.35em 1.2em;
+    width: 20%;
+    border: 0.1em solid black;
+    border-radius: 0.12em;
+    color: black;
+    background-color: white;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.restartButton:hover {
+    color: white;
+    background-color: #34495e;
+    border-color: #2c3e50;
 }
 
 .unselectable {
