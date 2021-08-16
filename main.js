@@ -87,8 +87,4 @@ const gameboard = (() => {
     };
 })();
 
-const Player = (playerName) => {
-    //
-}
-
 gameboard.eventHandlers();
