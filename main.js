@@ -6,6 +6,8 @@ const gameboard = (() => {
     ];
     const _cells = document.querySelectorAll('.cell');
     const _restart = document.querySelector('.restartButton');
+    const buttonContainer = document.querySelector('.buttonContainer');
+    let message = document.createTextNode('Three in a row!');
     const _winConditions = [
         [0, 1, 2],
         [3, 4, 5],
@@ -47,6 +49,10 @@ const gameboard = (() => {
         }
     }
 
+    const winMessage = () => {
+        buttonContainer.appendChild(message);
+    }
+
     const eventHandlers = () => {
         _cells.forEach(function (cell, i) {
             cell.addEventListener('click', () => {
@@ -62,7 +68,8 @@ const gameboard = (() => {
                     gameboard.updateBoard();
                     handleResultValidation();
                     if (_roundWon) {
-                        alert('You won');
+                        //alert('You won');
+                        winMessage();
                         _gameActive = false;
                         _roundWon = false;
                         return;
@@ -76,6 +83,9 @@ const gameboard = (() => {
             }
             _gameActive = true;
             gameboard.updateBoard();
+            if (buttonContainer.contains(message)) {
+                buttonContainer.removeChild(message);
+            }
         });
     }
 

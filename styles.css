@@ -48,7 +48,13 @@ container {
 .buttonContainer {
     padding-top: 2em;
     flex: 1 0 100%;
+    flex-wrap: wrap;
     text-align: center;
+}
+
+.forceBreak {
+    flex-basis: 100%;
+    height: 1em;
 }
 
 .restartButton {
