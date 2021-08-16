@@ -6,6 +6,7 @@ const gameboard = (() => {
     ];
 
     const _cells = document.querySelectorAll('.cell');
+    const _restart = document.querySelector('.restartButton');
 
     const _winConditions = [
         [0, 1, 2],
@@ -28,6 +29,14 @@ const gameboard = (() => {
 
     }
 
+    const clearBoard = () => {
+        _restart.addEventListener('click', () => {
+            for (let i = 0; i < gameboard.array.length; i++) {
+                gameboard.array.splice(i, 1, '');
+            }
+        })
+    }
+
     const eventHandlers = () => {
         _cells.forEach(function (cell, i) {
             cell.addEventListener('click', () => { // draw x's and o's on click
@@ -42,6 +51,12 @@ const gameboard = (() => {
                 gameboard.updateBoard();
             });
         });
+        _restart.addEventListener('click', () => {
+            for (let i = 0; i < gameboard.array.length; i++) {
+                gameboard.array.splice(i, 1, '');
+            }
+            gameboard.updateBoard();
+        });
     }
 
 
@@ -50,6 +65,7 @@ const gameboard = (() => {
         updateBoard,
         gameLogic,
         eventHandlers,
+        clearBoard
     };
 })();
 
